@@ -60,12 +60,31 @@ function hole_eintraege()
   function neuer_beitrag($eintrag){
     $titel = $eintrag['title'];
     $text = $eintrag['inhalt'];
-    $autor = $eintrag['eingeloggt'];
-    $statement="insert into beitraege(title,inhalt,datum,benutzer_id)VALUES(".$titel.",".$text.",)";
+    $autor = $_SESSION['eingeloggt'];
+    $timestamp = time();
+    $statement="INSERT INTO beitraege(title,inhalt)VALUES('".$titel."','".$text."')";
     $db = getDBConnection();
 
 
 
-  }
+
+}
+function registrierung_speichern($benutzer){
+$benutzername = $benutzer['benutzername'];
+$passwort = $benutzer['passwort'];
+$vorname = $benutzer['vorname'];
+$nachname = $benutzer['nachname'];
+$statement="INSERT INTO benutzer(benutzername,passwort,vorname,nachname)VALUES('".$benutzername."','".$passwort."','".$vorname."','".$nachname."')";
+$db = getDBConnection();
+
+}
+function loesche_beitrag(){
+$benutzername = $benutzer['benutzername'];
+$passwort = $benutzer['passwort'];
+$vorname = $benutzer['vorname'];
+$nachname = $benutzer['nachname'];
+$statement="DELETE FROM beitraege WHERE benutzername ='".$benutzername."'";
+$db = getDBConnection();
+}
 
 ?>

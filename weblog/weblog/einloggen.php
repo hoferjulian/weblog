@@ -1,5 +1,5 @@
 <?php
-    require_once 'includes/konfiguration.php';
+    //require_once 'includes/konfiguration.php';
     require_once 'includes/funktionen.inc.php';
     session_start();
 

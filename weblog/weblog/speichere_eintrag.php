@@ -22,9 +22,14 @@
     );
 
     // hole die alten Einträge, hänge den neuen an und speichere
-    $eintraege   = hole_eintraege();
-  $eintraege[] = $eintrag;
-  $eintrag=speichere_eintraege_in_datenbank;
+    $eintraege[]=neuer_beitrag($eintrag);
+    $eintraege = hole_eintraege();
+
+
+
+
+
+
   file_put_contents(PFAD_EINTRAEGE, serialize($eintraege));
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
